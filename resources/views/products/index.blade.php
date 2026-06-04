@@ -62,7 +62,7 @@
                     <th width="30%">Nama Produk</th>
                     <th width="15%">Kategori</th>
                     <th width="15%">Harga</th>
-                    <th>Stok</th>
+                    <th width="15%">Stok</th>
                     <th>Aksi</th>
                 </tr>
 
@@ -78,6 +78,7 @@
                     <td>Rp {{ number_format($product->harga) }}</td>
                     <td>{{ $product->stok }}</td>
                     <td class="text-center">
+                        <a href="{{ route('products.show', $product->id) }}" class="btn btn-info btn-sm">Detail</a>
                         <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                             @csrf

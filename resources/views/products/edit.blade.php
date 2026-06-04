@@ -2,11 +2,10 @@
 
 @section('content')
 
-<div class="card shadow">
+<div class="">
 
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">Edit Produk</h4>
-        <a href="{{ route('products.index') }}" class="btn btn-secondary">Kembali</a>
+        <h4 class="mb-5">Edit Produk</h4>
     </div>
 
     <div class="card-body">

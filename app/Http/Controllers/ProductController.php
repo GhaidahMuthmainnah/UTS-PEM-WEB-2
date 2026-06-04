@@ -69,7 +69,15 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $department) {}
+    public function show(Product $product)
+    {
+        $product->load('category');
+
+        return view('products.show', [
+            'title' => 'Detail Produk',
+            'product' => $product
+        ]);
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -102,7 +110,7 @@ class ProductController extends Controller
             'stok' => $request->stok,
         ]);
 
-        return redirect()->route('products.index')->with('warning', 'Produk berhasil diubah');
+        return redirect()->route('products.index')->with('success', 'Produk berhasil diubah');
     }
 
     /**
