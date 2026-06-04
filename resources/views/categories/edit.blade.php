@@ -60,7 +60,7 @@
             </div>
 
             <button type="submit" class="btn btn-warning">Update</button>
-            <a href="{{ route('categories.index') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('categories.index') }}" class="btn btn-primary">Kembali</a>
 
         </form>
 

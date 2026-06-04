@@ -74,4 +74,14 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('categories.index')->with('danger', 'Kategori berhasil dihapus');
     }
+
+    public function show(Category $category)
+    {
+        $category->load('products');
+
+        return view('categories.show', [
+            'title' => 'Detail Category',
+            'category' => $category
+        ]);
+    }
 }
