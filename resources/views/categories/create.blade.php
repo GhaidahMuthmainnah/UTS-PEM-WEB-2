@@ -60,14 +60,8 @@
                     placeholder="Masukkan deskripsi kategori">{{ old('deskripsi') }}</textarea>
             </div>
 
-            <button type="submit"
-                class="btn btn-success">Simpan
-            </button>
-
-            <a href="{{ route('categories.index') }}"
-                class="btn btn-danger">
-                Kembali
-            </a>
+            <button type="submit" class="btn btn-success">Simpan</button>
+            <a href="{{ route('categories.index') }}" class="btn btn-danger">Kembali</a>
 
         </form>
 

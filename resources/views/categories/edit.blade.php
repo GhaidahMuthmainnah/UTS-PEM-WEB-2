@@ -59,14 +59,8 @@
                     class="form-control">{{ old('deskripsi', $category->deskripsi) }}</textarea>
             </div>
 
-            <button type="submit" class="btn btn-warning">
-                Update
-            </button>
-
-            <a href="{{ route('categories.index') }}"
-                class="btn btn-secondary">
-                Kembali
-            </a>
+            <button type="submit" class="btn btn-warning">Update</button>
+            <a href="{{ route('categories.index') }}" class="btn btn-secondary">Kembali</a>
 
         </form>
 

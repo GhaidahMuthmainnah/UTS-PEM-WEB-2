@@ -27,17 +27,8 @@
 
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('categories.index') }}">
-                            Category
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('products.index') }}">
-                            Product
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Category</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('products.index') }}">Product</a></li>
 
                 </ul>
 

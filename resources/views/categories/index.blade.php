@@ -72,8 +72,19 @@
                             class="btn btn-warning btn-sm">
                             Edit
                         </a>
-                    </td>
 
+
+                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline">
+
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin hapus kategori ini?')">
+                                Hapus
+                            </button>
+                        </form>
+
+                    </td>
                 </tr>
 
                 @empty
