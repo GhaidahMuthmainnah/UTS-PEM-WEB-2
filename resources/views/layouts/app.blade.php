@@ -13,7 +13,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <div class="container">
+        <div class="container mt-2">
 
             <a class="navbar-brand fw-bold" href="/">
                 Sistem Data Category & Product
@@ -27,8 +27,8 @@
 
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Category</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('products.index') }}">Product</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('categories.*') ? 'active fw-bold text-primary' : '' }}" href="{{ route('categories.index') }}">Category</a></li>
+                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('products.*') ? 'active fw-bold text-warning' : '' }}" href="{{ route('products.index') }}">Product</a></li>
 
                 </ul>
 

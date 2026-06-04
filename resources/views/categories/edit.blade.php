@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="card shadow">
+<div class="">
 
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">Edit Kategori</h4>
+        <h4 class="mb-5">Edit Kategori</h4>
     </div>
 
     <div class="card-body">

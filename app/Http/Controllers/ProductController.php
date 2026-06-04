@@ -27,7 +27,7 @@ class ProductController extends Controller
         return view('products.index', [
             'title' => 'Product',
             'products' => $product
-                ->latest()->paginate(10)->withQueryString(),
+                ->latest()->paginate(7)->withQueryString(),
 
             'categories' => Category::all()
         ]);
@@ -38,7 +38,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create', [
+            'title' => 'Tambah Product',
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -46,7 +49,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_id' => 'required',
+            'nama_produk' => 'required',
+            'harga' => 'required',
+            'stok' => 'required'
+        ]);
+
+        Product::create([
+            'category_id' => $request->category_id,
+            'nama_produk' => $request->nama_produk,
+            'harga' => $request->harga,
+            'stok' => $request->stok
+        ]);
+
+        return redirect()->route('products.index')->with('warning', 'Data produk berhasil ditambahkan');
     }
 
     /**

@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
         return view('categories.index', [
             'title' => 'Category',
-            'categories' => $category->paginate(10)->withQueryString(),
+            'categories' => $category->paginate(5)->withQueryString(),
         ]);
     }
 
@@ -41,7 +41,7 @@ class CategoryController extends Controller
             'deskripsi' => $request->deskripsi
         ]);
 
-        return redirect()->route('categories.index')->with('success', 'Kategiro Anda Berhasil Ditambahkan');
+        return redirect()->route('categories.index')->with('success', 'Kategori Anda Berhasil Ditambahkan');
     }
 
     public function edit(Category $category)

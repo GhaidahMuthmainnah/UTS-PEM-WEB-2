@@ -13,10 +13,8 @@ class Product extends Model
     protected $fillable = [
         'category_id',
         'nama_produk',
-        'merk',
         'harga',
         'stok',
-        'deskripsi'
     ];
 
     public function category()

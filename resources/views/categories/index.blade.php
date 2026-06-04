@@ -2,12 +2,12 @@
 
 @section('content')
 
-<div class="card shadow">
+<div class="">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">Data Kategori</h4>
+        <h4 class="mb-5">Data Kategori</h4>
 
         <a href="{{ route('categories.create') }}"
-            class="btn btn-success">Tambah Kategori</a>
+            class="btn btn-success mb-5">Tambah Kategori</a>
     </div>
 
     <div class="card-body">

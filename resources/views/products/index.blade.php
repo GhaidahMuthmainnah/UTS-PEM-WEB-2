@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="card shadow">
+<div class="">
 
-    <div class="card-header d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">Data Produk</h4>
-        <a href="{{ route('products.create') }}" class="btn btn-success">Tambah Produk</a>
+    <div class=" d-flex justify-content-between align-items-center">
+        <h4 class="mb-5">Data Produk</h4>
+        <a href="{{ route('products.create') }}" class="btn btn-success mb-5">Tambah Produk</a>
     </div>
 
     <div class="card-body">
