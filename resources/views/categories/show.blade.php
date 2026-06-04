@@ -38,7 +38,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody class="text-center">
                 @forelse($category->products as $product)
                 <tr>
                     <td>{{ $loop->iteration }}</td>

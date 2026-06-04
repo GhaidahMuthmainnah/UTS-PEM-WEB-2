@@ -50,16 +50,16 @@
             <thead class="table-info">
 
                 <tr class="text-center">
-                    <th>No</th>
-                    <th>Nama Produk</th>
-                    <th>Kategori</th>
-                    <th>Harga</th>
+                    <th width="5%">No</th>
+                    <th width="30%">Nama Produk</th>
+                    <th width="15%">Kategori</th>
+                    <th width="15%">Harga</th>
                     <th>Stok</th>
                     <th>Aksi</th>
                 </tr>
 
             </thead>
-            <tbody>
+            <tbody class="text-center">
 
                 @forelse($products as $product)
 
@@ -69,8 +69,11 @@
                     <td>{{ $product->category->nama_kategori }}</td>
                     <td>Rp {{ number_format($product->harga) }}</td>
                     <td>{{ $product->stok }}</td>
-                    <td class="text-center">-</td>
+                    <td class="text-center">
+                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    </td>
                 </tr>
+
 
                 @empty
 

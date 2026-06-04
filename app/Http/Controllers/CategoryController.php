@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $category = Category::latest();
+        $category = Category::withCount('products')->latest();
 
         if ($search) {
             $category->where('nama_kategori', 'like', '%' . $search . '%');

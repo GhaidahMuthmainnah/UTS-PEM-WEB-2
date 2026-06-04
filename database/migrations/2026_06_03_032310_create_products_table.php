@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->decimal('harga', 10, 2);
             $table->integer('stok');
-
             $table->timestamps();
         });
     }
