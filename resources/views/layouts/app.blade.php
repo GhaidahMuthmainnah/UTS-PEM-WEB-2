@@ -16,7 +16,7 @@
         <div class="container">
 
             <a class="navbar-brand fw-bold" href="/">
-                Sistem Data Produk
+                Sistem Data Category & Product
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

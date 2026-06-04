@@ -63,22 +63,26 @@
                     <td>{{ $category->nama_kategori }}</td>
                     <td class="text-center">{{ $category->kode_kategori }}</td>
                     <td>{{ $category->deskripsi }}</td>
-                    <td class="text-center">{{ $category->products_count ?? 0 }}</td>
+                    <td class="text-center">{{ $category->products_count ?? 0 }}
 
                     </td>
+
+                    <td class="text-center">
+                        <a href="{{ route('categories.edit', $category->id) }}"
+                            class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+                    </td>
+
                 </tr>
 
                 @empty
 
                 <tr>
-
                     <td colspan="6"
                         class="text-center">
-
                         Data tidak ditemukan
-
                     </td>
-
                 </tr>
 
                 @endforelse

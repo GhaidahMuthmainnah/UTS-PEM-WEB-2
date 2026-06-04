@@ -43,4 +43,29 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')->with('success', 'Kategiro Anda Berhasil Ditambahkan');
     }
+
+    public function edit(Category $category)
+    {
+        return view('categories.edit', [
+            'title' => 'Edit Category',
+            'category' => $category
+        ]);
+    }
+
+    public function update(Request $request, Category $category)
+    {
+        $request->validate([
+            'nama_kategori' => 'required',
+            'kode_kategori' => 'required',
+            'deskripsi' => 'required'
+        ]);
+
+        $category->update([
+            'nama_kategori' => $request->nama_kategori,
+            'kode_kategori' => $request->kode_kategori,
+            'deskripsi' => $request->deskripsi
+        ]);
+
+        return redirect()->route('categories.index')->with('danger', 'Kategori berhasil diubah');
+    }
 }
