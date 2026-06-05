@@ -7,7 +7,7 @@
         <h4 class="mb-5">Data Kategori</h4>
 
         <a href="{{ route('categories.create') }}"
-            class="btn btn-success mb-5">Tambah Kategori</a>
+            class="btn btn-success mb-5">Tambah gaidah</a>
     </div>
 
     <div class="card-body">
@@ -37,7 +37,6 @@
             </div>
         </form>
 
-        {{-- Tabel --}}
         <table class="table table-bordered table-striped">
 
             <thead class="table-info">
@@ -99,7 +98,6 @@
 
         </table>
 
-        {{-- Pagination --}}
         <div class="mt-3">
 
             {{ $categories->links() }}
