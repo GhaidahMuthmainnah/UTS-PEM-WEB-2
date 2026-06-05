@@ -27,8 +27,15 @@
 
                 <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('categories.*') ? 'active fw-bold text-primary' : '' }}" href="{{ route('categories.index') }}">Category</a></li>
-                    <li class="nav-item"><a class="nav-link {{ request()->routeIs('products.*') ? 'active fw-bold text-warning' : '' }}" href="{{ route('products.index') }}">Product</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('categories.*') ? 'active fw-bold text-primary' : '' }}" href="{{ route('categories.index') }}">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('products.*') ? 'active fw-bold text-warning' : '' }}" href="{{ route('products.index') }}">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('products.trash') ? 'active fw-bold text-dark' : '' }}" href="{{ route('products.trash') }}">Trash Product</a>
+                    </li>
 
                 </ul>
 

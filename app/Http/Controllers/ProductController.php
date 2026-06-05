@@ -58,10 +58,9 @@ class ProductController extends Controller
             'stok' => 'required'
         ]);
 
-        DB::beginTransaction();
-
         try {
 
+            DB::beginTransaction();
             Product::create([
                 'category_id' => $request->category_id,
                 'nama_produk' => $request->nama_produk,
@@ -117,10 +116,9 @@ class ProductController extends Controller
             'stok' => 'required|numeric',
         ]);
 
-        DB::beginTransaction();
-
         try {
 
+            DB::beginTransaction();
             $product->update([
                 'category_id' => $request->category_id,
                 'nama_produk' => $request->nama_produk,
@@ -144,7 +142,14 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-
         return redirect()->route('products.index')->with('warning', 'Data produk berhasil dihapus');
+    }
+
+    public function trash()
+    {
+        return view('products.trash', [
+            'title' => 'Trash Product',
+            'products' => Product::onlyTrashed()->latest()->paginate(5),
+        ]);
     }
 }
