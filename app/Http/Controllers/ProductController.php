@@ -158,4 +158,10 @@ class ProductController extends Controller
         $product->restore();
         return to_route('products.trash')->withSuccess('Data berhasil dikembalikan');
     }
+
+    public function forceDelete(Product $product)
+    {
+        $product->forceDelete();
+        return to_route('products.trash')->with('success', 'Data berhasil dihapus permanen');
+    }
 }

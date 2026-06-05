@@ -24,7 +24,7 @@
                     <th>Kategori</th>
                     <th>Harga</th>
                     <th>Stok</th>
-                    <th>Aksi</th>
+                    <th width="17%">Aksi</th>
                 </tr>
             </thead>
 
@@ -40,13 +40,23 @@
                     <td>Rp {{ number_format($product->harga,0,',','.') }} </td>
                     <td>{{ $product->stok }}</td>
                     <td>
-                        <form action="{{ route('products.restore', $product->id) }}" method="POST">
-                            @method('PUT')
-                            @csrf
+                        <div class=" d-flex gap-1">
 
-                            <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('Anda Yakin Ingin Mengembalikan Data?')">Restore</button>
+                            <form action="{{ route('products.restore', $product->id) }}" method="POST">
+                                @method('PUT')
+                                @csrf
 
-                        </form>
+                                <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('Anda Yakin Ingin Mengembalikan Data?')">Restore</button>
+                            </form>
+
+                            <form action="{{ route('products.force-delete', $product->id) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini Secara Permanen?')">Force Delete</button>
+                            </form>
+                        </div>
+
                     </td>
                 </tr>
 
