@@ -152,4 +152,10 @@ class ProductController extends Controller
             'products' => Product::onlyTrashed()->latest()->paginate(5),
         ]);
     }
+
+    public function restore(Product $product)
+    {
+        $product->restore();
+        return to_route('products.trash')->withSuccess('Data berhasil dikembalikan');
+    }
 }

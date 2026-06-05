@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/products/trash', [ProductController::class, 'trash'])->name('products.trash');
+Route::put('/products/{product}/restore', [ProductController::class, 'restore'])->withTrashed()->name('products.restore');
 
 Route::resource('categories', CategoryController::class);
 Route::resource('products', ProductController::class);
