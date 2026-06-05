@@ -59,10 +59,11 @@
 
                 <tr class="text-center">
                     <th width="5%">No</th>
-                    <th width="30%">Nama Produk</th>
+                    <th width="20%">Nama Produk</th>
+                    <th>Supplier</th>
                     <th width="15%">Kategori</th>
                     <th width="15%">Harga</th>
-                    <th width="15%">Stok</th>
+                    <th width="7%">Stok</th>
                     <th>Aksi</th>
                 </tr>
 
@@ -74,6 +75,7 @@
                 <tr>
                     <td>{{ $loop->iteration + ($products->firstItem() - 1) }}</td>
                     <td>{{ $product->nama_produk }}</td>
+                    <td>{{ $product->supplier ?: '-' }}</td>
                     <td>{{ $product->category->nama_kategori }}</td>
                     <td>Rp {{ number_format($product->harga) }}</td>
                     <td>{{ $product->stok }}</td>

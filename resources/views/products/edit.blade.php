@@ -43,36 +43,23 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">
-                    Nama Produk
-                </label>
-
-                <input type="text"
-                    name="nama_produk"
-                    class="form-control"
-                    value="{{ old('nama_produk', $product->nama_produk) }}">
+                <label class="form-label">Nama Produk</label>
+                <input type="text" name="nama_produk" class="form-control" value="{{ old('nama_produk', $product->nama_produk) }}">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">
-                    Harga
-                </label>
-
-                <input type="number"
-                    name="harga"
-                    class="form-control"
-                    value="{{ old('harga', $product->harga) }}">
+                <label class="form-label">Harga</label>
+                <input type="number" name="harga" class="form-control" value="{{ old('harga', $product->harga) }}">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">
-                    Stok
-                </label>
+                <label class="form-label">Supplier</label>
+                <input type="text" name="supplier" class="form-control" value="{{ old('supplier') }}">
+            </div>
 
-                <input type="number"
-                    name="stok"
-                    class="form-control"
-                    value="{{ old('stok', $product->stok) }}">
+            <div class="mb-3">
+                <label class="form-label">Stok</label>
+                <input type="number" name="stok" class="form-control" value="{{ old('stok', $product->stok) }}">
             </div>
 
             <button type="submit" class="btn btn-warning">Update</button>

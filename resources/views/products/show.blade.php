@@ -21,6 +21,11 @@
             </tr>
 
             <tr>
+                <th>Supplier</th>
+                <td>{{ $product->supplier }}</td>
+            </tr>
+
+            <tr>
                 <th>Harga</th>
                 <td>Rp {{ number_format($product->harga, 0, ',', '.') }}</td>
             </tr>

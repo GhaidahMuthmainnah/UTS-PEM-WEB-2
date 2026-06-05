@@ -61,6 +61,13 @@
 
             <div class="mb-3">
 
+                <label class="form-label">Supplier</label>
+                <input type="text" name="supplier" class="form-control" value="{{ old('supplier') }}">
+
+            </div>
+
+            <div class="mb-3">
+
                 <label class="form-label">Stok</label>
                 <input type="number" name="stok" class="form-control" value="{{ old('stok') }}">
 

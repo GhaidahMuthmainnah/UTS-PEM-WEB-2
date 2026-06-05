@@ -27,7 +27,7 @@ class ProductController extends Controller
         return view('products.index', [
             'title' => 'Product',
             'products' => $product
-                ->latest()->paginate(7)->withQueryString(),
+                ->latest()->paginate(5)->withQueryString(),
 
             'categories' => Category::all()
         ]);
@@ -52,6 +52,7 @@ class ProductController extends Controller
         $request->validate([
             'category_id' => 'required',
             'nama_produk' => 'required',
+            'supplier' => 'required',
             'harga' => 'required',
             'stok' => 'required'
         ]);
@@ -59,6 +60,7 @@ class ProductController extends Controller
         Product::create([
             'category_id' => $request->category_id,
             'nama_produk' => $request->nama_produk,
+            'supplier' => $request->supplier,
             'harga' => $request->harga,
             'stok' => $request->stok
         ]);
@@ -99,6 +101,7 @@ class ProductController extends Controller
         $request->validate([
             'category_id' => 'required',
             'nama_produk' => 'required',
+            'supplier' => 'required',
             'harga' => 'required|numeric',
             'stok' => 'required|numeric',
         ]);
@@ -106,6 +109,7 @@ class ProductController extends Controller
         $product->update([
             'category_id' => $request->category_id,
             'nama_produk' => $request->nama_produk,
+            'supplier' => $request->supplier,
             'harga' => $request->harga,
             'stok' => $request->stok,
         ]);
