@@ -71,16 +71,11 @@ class ProductController extends Controller
             ]);
 
             DB::commit();
-
-            return redirect()->route('products.index')
-                ->with('success', 'Data produk berhasil ditambahkan');
+            return redirect()->route('products.index')->with('success', 'Data produk berhasil ditambahkan');
         } catch (\Exception $e) {
 
             DB::rollBack();
-
-            return back()
-                ->withInput()
-                ->with('error', 'Data produk gagal ditambahkan');
+            return back()->withInput()->with('error', 'Data produk gagal ditambahkan');
         }
     }
 
@@ -122,15 +117,25 @@ class ProductController extends Controller
             'stok' => 'required|numeric',
         ]);
 
-        $product->update([
-            'category_id' => $request->category_id,
-            'nama_produk' => $request->nama_produk,
-            'supplier' => $request->supplier,
-            'harga' => $request->harga,
-            'stok' => $request->stok,
-        ]);
+        DB::beginTransaction();
 
-        return redirect()->route('products.index')->with('success', 'Produk berhasil diubah');
+        try {
+
+            $product->update([
+                'category_id' => $request->category_id,
+                'nama_produk' => $request->nama_produk,
+                'supplier' => $request->supplier,
+                'harga' => $request->harga,
+                'stok' => $request->stok,
+            ]);
+
+            DB::commit();
+            return redirect()->route('products.index')->with('success', 'Produk berhasil diubah');
+        } catch (\Exception $e) {
+
+            DB::rollBack();
+            return back()->withInput()->with('error', 'Produk gagal diubah');
+        }
     }
 
     /**

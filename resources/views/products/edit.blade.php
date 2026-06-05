@@ -54,7 +54,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Supplier</label>
-                <input type="text" name="supplier" class="form-control" value="{{ old('supplier') }}">
+                <input type="text" name="supplier" class="form-control" value="{{ old('supplier', $product->supplier) }}">
             </div>
 
             <div class="mb-3">
